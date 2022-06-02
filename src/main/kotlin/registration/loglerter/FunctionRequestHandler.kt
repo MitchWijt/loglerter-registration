@@ -7,6 +7,12 @@ class FunctionRequestHandler(val mapper: JsonMapper) : MicronautRequestHandler<S
         val configuration: LogLerterConfiguration = mapper.mapJSon(jsonString)
         val registrationService = RegistrationService(configuration)
 
+        // We check if the user exists.
+        // if the user exists we call an update function in the registrationService
+        // if the user does not exist we call the creation method in the registration service
+
+        // we need to test all the individual units apart from each other.
+
         return LogLerterRegistrationResponse("")
     }
 }
